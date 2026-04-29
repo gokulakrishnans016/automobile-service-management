@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Management</title>
+
+    <link rel="stylesheet" href="/modules/service/service.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2><i class="fa-solid fa-car"></i> DriveSync</h2>
+
+        <ul class="menu">
+
+            <li onclick="go('dashboard')">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </li>
+
+            <li onclick="go('vehicle')">
+                <i class="fa-solid fa-car-side"></i>
+                <span>Vehicles</span>
+            </li>
+
+            <li onclick="go('customer')">
+                <i class="fa-solid fa-users"></i>
+                <span>Customers</span>
+            </li>
+
+            <li onclick="go('sales')" >
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Sales</span>
+            </li>
+
+            <li onclick="go('payment')">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Payments</span>
+            </li>
+
+            <li onclick="go('service')"  class="active">
+                <i class="fa-solid fa-wrench"></i>
+                <span>Service</span>
+            </li>
+
+            <li class="menu-item logout" onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <div class="top-bar">
+            <h1>Vehicle Service Management</h1>
+            <button class="add-btn" onclick="openModal()">+ Add Service</button>
+        </div>
+
+        <div class="table-card">
+            <table>
+                <thead>
+                <tr>
+                    <th>Vehicle</th>
+                    <th>Customer</th>
+                    <th>Type</th>
+                    <th>Cost</th>
+                    <th>Status</th>
+                    <th>Next Service</th>
+                    <th id="actionHeader">Action</th>
+                </tr>
+                </thead>
+
+                <tbody id="serviceTable"></tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<!-- MODAL -->
+<div id="serviceModal" class="modal hidden">
+    <div class="modal-content">
+
+        <h2>Add Service</h2>
+
+        <form onsubmit="saveService(event)">
+
+            <label>Vehicle</label>
+            <select id="vehicle" onchange="autoFillCustomer(this.value)"></select>
+
+            <div class="info-box">
+                <b>Customer :</b> <span id="autoCustomer">-</span><br>
+                <b>Vehicle  :</b> <span id="autoVehicle">-</span>
+            </div>
+
+            <input type="hidden" id="customerId">
+
+            <label>Service Type</label>
+
+            <div class="checkbox-group">
+
+                <label><input type="checkbox" value="GENERAL_SERVICE"> General Service</label>
+                <label><input type="checkbox" value="OIL_CHANGE"> Oil Change</label>
+                <label><input type="checkbox" value="AC_SERVICE"> AC Service</label>
+                <label><input type="checkbox" value="WATER_WASH"> Water Wash</label>
+                <label><input type="checkbox" value="ENGINE_CHECK"> Engine Check</label>
+
+            </div>
+
+            <label>Description</label>
+            <input id="desc">
+
+            <label>Cost</label>
+            <input id="cost" type="number" required>
+
+            <label>Next Service Date</label>
+            <input id="nextDate" type="date">
+
+            <button type="submit">Save</button>
+            <button type="button" onclick="closeModal()">Cancel</button>
+
+        </form>
+    </div>
+</div>
+
+<script src="/js/app.js"></script>
+<script src="/modules/service/service.js"></script>
+
+</body>
+</html>

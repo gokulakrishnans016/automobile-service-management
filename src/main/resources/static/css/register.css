@@ -1,0 +1,291 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Playfair', serif;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARD */
+.card {
+    width: 700px;
+    padding: 40px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* TITLE */
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    background: linear-gradient(90deg, #6366f1, #22c55e);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.card p {
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 25px;
+}
+
+/* INPUT GROUP */
+.input-group {
+    position: relative;
+}
+
+/* INPUT + SELECT SAME STYLE */
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #020617;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* REMOVE DEFAULT SELECT STYLE */
+.input-group select {
+    appearance: none;
+}
+
+/* LABEL */
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 13px;
+    pointer-events: none;
+    transition: 0.3s;
+    background: #020617;
+}
+
+/* FLOAT LABEL */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -8px;
+    left: 10px;
+    font-size: 11px;
+    padding: 0 5px;
+    color: #6366f1;
+}
+
+/* DATE FIX */
+.input-group label.active {
+    top: -8px;
+    font-size: 11px;
+    padding: 0 5px;
+}
+
+/* FOCUS GLOW */
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 12px rgba(99,102,241,0.6);
+}
+
+/* DROPDOWN DARK */
+select option {
+    background: #020617;
+    color: #fff;
+}
+
+/* BUTTON */
+button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(99,102,241,0.6);
+}
+
+/* BOTTOM */
+.bottom {
+    margin-top: 20px;
+}
+
+.bottom p {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* LOGIN BUTTON STYLE */
+.bottom a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #6366f1;
+    color: #6366f1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.bottom a:hover {
+    background: #6366f1;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(99,102,241,0.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .card {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* DATE INPUT ICON FIX */
+input[type="date"] {
+    color-scheme: dark;
+}
+
+/* OPTIONAL: MAKE ICON BRIGHTER */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* FORCE SAME FONT EVERYWHERE */
+input,
+select {
+    font-family: 'Playfair', serif;
+    font-size: 14px;
+}
+
+/* FIX SELECT TEXT COLOR */
+select {
+    color: #cbd5e1;
+}
+
+/* WHEN SELECTED */
+select:valid {
+    color: #fff;
+}
+
+/* DATE TEXT COLOR */
+input[type="date"] {
+    color: #cbd5e1;
+}
+
+/* WHEN FILLED */
+input[type="date"]:valid {
+    color: #fff;
+}
+
+select option[value=""] {
+    color: #94a3b8;
+}
+
+/* REMOVE UGLY DEFAULT STYLE */
+select {
+    appearance: none;
+    background: #020617;
+}
+
+.info-card {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+  min-height: 160px;
+  }
+
+.info-card h3 {
+  color: #38bdf8;
+  font-size: 1.05rem;
+}
+
+.info-card p {
+  color: #cbd5f5;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ===== FIX CHROME STYLE OVERRIDE ===== */
+input,
+input:focus,
+input:active,
+input:hover,
+input:valid,
+input:invalid {
+    background-color: #020617 !important;
+    color: #ffffff !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+
+    /* VERY IMPORTANT */
+    -webkit-box-shadow: 0 0 0px 1000px #020617 inset !important;
+    box-shadow: 0 0 0px 1000px #020617 inset !important;
+
+    background-color: #020617 !important;
+    caret-color: #ffffff !important;
+
+    border: 1px solid rgba(255,255,255,0.15) !important;
+
+    /* REMOVE FLASH */
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+input:-internal-autofill-selected {
+    background-color: #020617 !important;
+    color: #ffffff !important;
+}

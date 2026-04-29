@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | AutoDrive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" href="data:,">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <h2>Welcome Back 👋</h2>
+        <p>Login to your AutoDrive account</p>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+                <input type="text" id="username" required>
+                <label>Username</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" required>
+                <label>Password</label>
+            </div>
+
+            <button type="submit" onclick="login(event)">Login</button>
+
+        </form>
+
+        <div class="bottom">
+            <p>Don't have an account?</p>
+            <a href="register.html" class="register-btn">Register</a>
+        </div>
+
+    </div>
+</div>
+
+<script src="/js/login.js"></script>
+
+</body>
+</html>

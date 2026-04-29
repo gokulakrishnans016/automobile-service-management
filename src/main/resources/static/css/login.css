@@ -1,0 +1,170 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #1e293b, #020617);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* CARD */
+.card {
+    width: 420px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* HEADER */
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+/* INPUT GROUP */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* INPUT SAME AS REGISTER */
+.input-group input {
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #020617;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* LABEL */
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 13px;
+    pointer-events: none;
+    transition: 0.3s;
+    background: #020617;
+}
+
+/* FLOAT EFFECT */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -8px;
+    left: 10px;
+    font-size: 11px;
+    padding: 0 5px;
+    color: #6366f1;
+}
+
+/* GLOW EFFECT */
+.input-group input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 12px rgba(99,102,241,0.6);
+}
+
+/* LOGIN BUTTON (FIXED) */
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(99,102,241,0.6);
+}
+
+/* BOTTOM */
+.bottom {
+    margin-top: 20px;
+}
+
+.bottom p {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* REGISTER BUTTON STYLE */
+.register-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #6366f1;
+    color: #6366f1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: #6366f1;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(99,102,241,0.6);
+}
+
+/* ===== FORCE SAME STYLE FOR ALL INPUT STATES ===== */
+input,
+input:focus,
+input:active,
+input:hover,
+input:valid,
+input:invalid {
+    background-color: #020617 !important;
+    color: #ffffff !important;
+}
+
+/* ===== PERFECT AUTOFILL FIX (FINAL) ===== */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+
+    /* VERY IMPORTANT */
+    -webkit-box-shadow: 0 0 0px 1000px #020617 inset !important;
+    box-shadow: 0 0 0px 1000px #020617 inset !important;
+
+    background-color: #020617 !important;
+    caret-color: #ffffff !important;
+
+    border: 1px solid rgba(255,255,255,0.15) !important;
+
+    /* REMOVE FLASH */
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ===== FIX CHROME STRONG OVERRIDE ===== */
+input:-internal-autofill-selected {
+    background-color: #020617 !important;
+    color: #ffffff !important;
+}
