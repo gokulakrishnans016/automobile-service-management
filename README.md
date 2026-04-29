@@ -1,4 +1,4 @@
-# 🚗 Automobile Service Management System
+# 🚗 DriveSync — Automobile Service Management System
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
@@ -11,22 +11,56 @@
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home](screenshots/home.png)
+
+### 🔐 Login Page
+![Login](screenshots/login.png)
+
+### 📊 Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### 🚘 Vehicle Management
+![Vehicles](screenshots/vehicle.png)
+
+### ➕ Add Vehicle
+![Add Vehicle](screenshots/vehicle_add.png)
+
+### 👥 Customer Management
+![Customers](screenshots/customer.png)
+
+### 💰 Sales
+![Sales](screenshots/sales.png)
+
+### 💳 Payment
+![Payment](screenshots/payment.png)
+
+### 🔧 Service Records
+![Service](screenshots/service.png)
+
+### 📝 Register
+![Register](screenshots/register.png)
+
+---
+
 ## 📌 About the Project
 
-The **Automobile Service Management System** is a complete full-stack web application designed to streamline vehicle service operations. It handles user management, vehicle tracking, and service workflows through a clean RESTful API backend and a responsive frontend interface.
-
-This project was built to demonstrate real-world full-stack development skills — from database design to API development to responsive UI.
+**DriveSync** is a complete full-stack web application designed to streamline vehicle service operations. It handles user management, vehicle tracking, sales, payments, and service workflows through a clean RESTful API backend and a responsive dark-themed frontend.
 
 ---
 
 ## ✨ Features
 
-- 🔐 **User Management** — Register, login, and manage user accounts
-- 🚘 **Vehicle Management** — Add, update, and track vehicles by owner
-- 🔧 **Service Operations** — Create and manage service requests and history
-- 📋 **RESTful API** — Clean, well-structured API endpoints
-- 📱 **Responsive UI** — Works seamlessly across desktop and mobile
-- 🏗️ **MVC Architecture** — Clean separation of concerns
+- 🔐 **Authentication** — Secure login and registration system
+- 🚘 **Vehicle Management** — Add, edit, track vehicles with fuel type, stock, pricing
+- 👥 **Customer Management** — Manage customer records and contact details
+- 💰 **Sales Tracking** — Monitor and record sales transactions
+- 💳 **Payment Management** — Track payment transactions
+- 🔧 **Service Records** — Vehicle service history and maintenance tracking
+- 📊 **Dashboard** — Real-time overview of vehicles, customers, sales, payments and services
+- 📱 **Responsive UI** — Dark themed, modern interface
 
 ---
 
@@ -56,11 +90,13 @@ AutomobileApplication/
 │   │   │       ├── controller/    # REST Controllers
 │   │   │       ├── model/         # Entity Classes
 │   │   │       ├── repository/    # Database Layer
-│   │   │       └── service/       # Business Logic
+│   │   │       ├── service/       # Business Logic
+│   │   │       └── dto/           # Data Transfer Objects
 │   │   └── resources/
 │   │       ├── static/            # Frontend (HTML, CSS, JS)
 │   │       └── application.properties
 │   └── test/
+├── screenshots/                   # Project Screenshots
 ├── pom.xml
 └── README.md
 ```
@@ -112,14 +148,17 @@ http://localhost:8080
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/users` | Get all users |
-| POST | `/api/users` | Create a new user |
+| POST | `/api/auth/login` | User login |
+| POST | `/api/auth/register` | User registration |
 | GET | `/api/vehicles` | Get all vehicles |
 | POST | `/api/vehicles` | Add a new vehicle |
+| GET | `/api/customers` | Get all customers |
+| POST | `/api/customers` | Add a new customer |
+| GET | `/api/sales` | Get all sales |
+| POST | `/api/sales` | Create a sale |
 | GET | `/api/services` | Get all service records |
-| POST | `/api/services` | Create a service request |
-| PUT | `/api/services/{id}` | Update service status |
-| DELETE | `/api/services/{id}` | Delete a service record |
+| POST | `/api/services` | Create a service record |
+| GET | `/api/payments` | Get all payments |
 
 ---
 
@@ -127,9 +166,10 @@ http://localhost:8080
 
 - Designed and implemented **RESTful APIs** from scratch using Spring Boot
 - Applied **MVC architecture** for clean, maintainable code
-- Built a **responsive frontend** integrated with backend APIs
+- Built a **responsive dark-themed frontend** integrated with backend APIs
 - Managed relational data using **MySQL with JPA/Hibernate**
 - Used **Maven** for dependency management and project build
+- Implemented **authentication and authorization** for secure access
 
 ---
 
@@ -137,7 +177,7 @@ http://localhost:8080
 
 **Gokula Krishnan S**
 - 📧 Email: [gokulakrishnan634@gmail.com](mailto:gokulakrishnan634@gmail.com)
-- 💼 LinkedIn: [linkedin.com/in/gokula-krishnan-s-238b15292](https://www.linkedin.com/in/gokula-krishnan-s-238b15292)
+- 💼 LinkedIn: [linkedin.com/in/gokulakrishnan-java](https://www.linkedin.com/in/gokulakrishnan-java)
 - 🐙 GitHub: [github.com/gokulakrishnans016](https://github.com/gokulakrishnans016)
 
 ---
